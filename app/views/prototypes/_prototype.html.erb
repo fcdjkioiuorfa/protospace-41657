@@ -1,0 +1,18 @@
+<div class="prototype">
+  <%# プロトタイプの画像 %>
+  <div class="prototype__image">
+    <% if prototype.image.attached? %>
+      <%= link_to image_tag(prototype.image), prototype_path(prototype) %>
+    <% else %>
+      <p>画像が見つかりません。</p>
+    <% end %>
+  </div>
+
+  <%# プロトタイプの名前 %>
+  <h2>
+    <%= link_to prototype.name, prototype_path(prototype) %>
+  </h2>
+
+  <p><%= prototype.catchphrase %></p>
+  <p>Posted by: <%= prototype.user.name %></p>
+</div>
